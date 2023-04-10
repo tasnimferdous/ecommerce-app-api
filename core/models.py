@@ -31,17 +31,17 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     """User in the system"""
     user_roles = [
-        ('buyer', 'buyer'),
-        ('seller', 'seller'),
+        ('BUYER', 'Buyer'),
+        ('SELLER', 'Seller'),
     ]
     email = models.EmailField(max_length=255, unique=True)
-    username = models.CharField(max_length=255, blank=True)
+    name = models.CharField(max_length=255, blank=True)
     first_name = models.CharField(max_length=255, blank=True)
     last_name = models.CharField(max_length=255, blank=True)
     phone = models.CharField(max_length=255, blank=True)
     address = models.CharField(max_length=255, blank=True)
     works_at = models.CharField(max_length=255, blank=True)
-    role = models.CharField(max_length=255, choices=user_roles, default='buyer')
+    role = models.CharField(max_length=255, choices=user_roles, default='BUYER')
     # avatar = models.ImageField()
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
