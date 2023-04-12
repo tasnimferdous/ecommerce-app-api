@@ -21,8 +21,6 @@ class UserAdmin(BaseUserAdmin):
                 'last_name',
                 'phone',
                 'address',
-                'works_at',
-                'role',
                 )
             }
         ),
@@ -51,8 +49,6 @@ class UserAdmin(BaseUserAdmin):
                 'password2',
                 'phone',
                 'address',
-                'works_at',
-                'role',
                 'is_active',
                 'is_staff',
                 'is_superuser',
@@ -62,3 +58,4 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(models.User, UserAdmin)
+admin.site.register(models.Product)
